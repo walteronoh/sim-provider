@@ -1,0 +1,14 @@
+{
+  "name": "simprovider",
+  "version": "1.0.0",
+  "description": "A package used to show simcard providers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simcard"
+  ],
+  "author": "walterkiprono81@gmail.com",
+  "license": "MIT"
+}
