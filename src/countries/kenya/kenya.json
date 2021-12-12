@@ -1,0 +1,22 @@
+{
+    "country": "kenya",
+    "simProviders": [
+        {
+            "name": "safaricom",
+            "regex": "^(\\+254|0)[17]\\d{8}$"
+        },
+        {
+            "name": "telkom",
+            "regex": "^(\\+254|1)[17]\\d{8}$"
+        },
+        {
+            "name": "airtel",
+            "regex": "^(\\+254|2)[17]\\d{8}$"
+        },
+        {
+            "name": "faiba",
+            "regex": "^(\\+254|3)[17]\\d{8}$"
+        }
+    ],
+    "simRegex": "^(\\+254|0)[17]\\d{8}$"
+}
