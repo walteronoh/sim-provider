@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "isolatedModules": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitAny": false,
+        "module": "commonjs"
+    },
+    "include": [
+        "src"
+    ]
+}

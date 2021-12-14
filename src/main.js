@@ -1,34 +1,25 @@
-const fs = require("fs");
-
-//Write function to read from folders
-const getProviderName = (phonenumber) => {
-    const countries = fs.readdirSync("countries/");
-    let provider;
-    countries.forEach((country) => {
-        const file = fs.readdirSync(`countries/${country}/`);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getProviderName = void 0;
+var fs = require("fs");
+var getProviderName = function (phonenumber) {
+    var countries = fs.readdirSync("countries/");
+    var provider;
+    countries.forEach(function (country) {
+        var file = fs.readdirSync("countries/".concat(country, "/"));
         if (file.length > 0) {
-            const content = fs.readFileSync(`countries/${country}/${file}`, "utf8");
+            var content = fs.readFileSync("countries/".concat(country, "/").concat(file), "utf8");
             try {
-                const obj = JSON.parse(content);
+                var obj = JSON.parse(content);
                 obj.simProviders
-                    .filter((provider) => new RegExp(provider.regex).test(phonenumber))
-                    .map((value) => provider = value);
-            } catch (error) {
+                    .filter(function (provider) { return new RegExp(provider.regex).test(phonenumber); })
+                    .map(function (value) { return provider = value; });
+            }
+            catch (error) {
                 throw error;
             }
         }
-    })
+    });
     return provider;
-}
-
-//Write function to display country providers
-const getCountryProviderData = (country) => {
-
-}
-
-//Validate phone number for a specific country
-const validateCountryProvider = (country, phonenumber) => {
-
-}
-
-export { getProviderName };
+};
+exports.getProviderName = getProviderName;
