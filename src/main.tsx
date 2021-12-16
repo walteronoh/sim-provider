@@ -25,13 +25,37 @@ const getProviderName = (phonenumber: string): ProviderOutput => {
     return provider;
 };
 
-// const getCountryProviderData = (country: string) => {
+const getCountryProviderData = (country: string) => {
+    const countries = fs.readdirSync("countries/");
+    let providerData;
+    countries.filter((countryName) => countryName == country).map((ctry) => {
+        const file = fs.readdirSync(`countries/${ctry}/`);
+        const content = fs.readFileSync(`countries/${ctry}/${file}`, "utf8");
+        try {
+            const obj = JSON.parse(content);
+            providerData = obj.simProviders;
+        } catch (error) {
+            throw error;
+        }
+    })
+    return providerData;
+};
 
-// };
+const validateCountryProvider = (country: string, phonenumber: string): boolean => {
+    const countries = fs.readdirSync("countries/");
+    let isValidated;
+    countries.filter((countryName) => countryName == country).map((ctry) => {
+        const file = fs.readdirSync(`countries/${ctry}/`);
+        const content = fs.readFileSync(`countries/${ctry}/${file}`, "utf8");
+        try {
+            const obj = JSON.parse(content);
+            isValidated = new RegExp(obj.simRegex).test(phonenumber) ? true : false
+        } catch (error) {
+            throw error;
+        }
+    })
+    return isValidated;
+};
 
 
-// const validateCountryProvider = (country: string, phonenumber: string) => {
-
-// };
-
-export { getProviderName };
+export { getProviderName, getCountryProviderData, validateCountryProvider };

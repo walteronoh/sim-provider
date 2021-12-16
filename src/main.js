@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getProviderName = void 0;
+exports.validateCountryProvider = exports.getCountryProviderData = exports.getProviderName = void 0;
 var fs = require("fs");
 var getProviderName = function (phonenumber) {
     var countries = fs.readdirSync("countries/");
@@ -23,3 +23,37 @@ var getProviderName = function (phonenumber) {
     return provider;
 };
 exports.getProviderName = getProviderName;
+var getCountryProviderData = function (country) {
+    var countries = fs.readdirSync("countries/");
+    var providerData;
+    countries.filter(function (countryName) { return countryName == country; }).map(function (ctry) {
+        var file = fs.readdirSync("countries/".concat(ctry, "/"));
+        var content = fs.readFileSync("countries/".concat(ctry, "/").concat(file), "utf8");
+        try {
+            var obj = JSON.parse(content);
+            providerData = obj.simProviders;
+        }
+        catch (error) {
+            throw error;
+        }
+    });
+    return providerData;
+};
+exports.getCountryProviderData = getCountryProviderData;
+var validateCountryProvider = function (country, phonenumber) {
+    var countries = fs.readdirSync("countries/");
+    var isValidated;
+    countries.filter(function (countryName) { return countryName == country; }).map(function (ctry) {
+        var file = fs.readdirSync("countries/".concat(ctry, "/"));
+        var content = fs.readFileSync("countries/".concat(ctry, "/").concat(file), "utf8");
+        try {
+            var obj = JSON.parse(content);
+            isValidated = new RegExp(obj.simRegex).test(phonenumber) ? true : false;
+        }
+        catch (error) {
+            throw error;
+        }
+    });
+    return isValidated;
+};
+exports.validateCountryProvider = validateCountryProvider;
