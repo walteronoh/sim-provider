@@ -2,13 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateCountryProvider = exports.getCountryProviderData = exports.getProviderName = void 0;
 var fs = require("fs");
+var path = __dirname;
 var getProviderName = function (phonenumber) {
-    var countries = fs.readdirSync("countries/");
+    var countries = fs.readdirSync("".concat(path, "/countries/"));
     var provider;
     countries.forEach(function (country) {
-        var file = fs.readdirSync("countries/".concat(country, "/"));
+        var file = fs.readdirSync("".concat(path, "/countries/").concat(country, "/"));
         if (file.length > 0) {
-            var content = fs.readFileSync("countries/".concat(country, "/").concat(file), "utf8");
+            var content = fs.readFileSync("".concat(path, "/countries/").concat(country, "/").concat(file), "utf8");
             try {
                 var obj = JSON.parse(content);
                 obj.simProviders
@@ -24,11 +25,11 @@ var getProviderName = function (phonenumber) {
 };
 exports.getProviderName = getProviderName;
 var getCountryProviderData = function (country) {
-    var countries = fs.readdirSync("countries/");
+    var countries = fs.readdirSync("".concat(path, "/countries/"));
     var providerData;
     countries.filter(function (countryName) { return countryName == country; }).map(function (ctry) {
-        var file = fs.readdirSync("countries/".concat(ctry, "/"));
-        var content = fs.readFileSync("countries/".concat(ctry, "/").concat(file), "utf8");
+        var file = fs.readdirSync("".concat(path, "/countries/").concat(ctry, "/"));
+        var content = fs.readFileSync("".concat(path, "/countries/").concat(ctry, "/").concat(file), "utf8");
         try {
             var obj = JSON.parse(content);
             providerData = obj.simProviders;
@@ -41,11 +42,11 @@ var getCountryProviderData = function (country) {
 };
 exports.getCountryProviderData = getCountryProviderData;
 var validateCountryProvider = function (country, phonenumber) {
-    var countries = fs.readdirSync("countries/");
+    var countries = fs.readdirSync("".concat(path, "/countries/"));
     var isValidated;
     countries.filter(function (countryName) { return countryName == country; }).map(function (ctry) {
-        var file = fs.readdirSync("countries/".concat(ctry, "/"));
-        var content = fs.readFileSync("countries/".concat(ctry, "/").concat(file), "utf8");
+        var file = fs.readdirSync("".concat(path, "/countries/").concat(ctry, "/"));
+        var content = fs.readFileSync("".concat(path, "/countries/").concat(ctry, "/").concat(file), "utf8");
         try {
             var obj = JSON.parse(content);
             isValidated = new RegExp(obj.simRegex).test(phonenumber) ? true : false;

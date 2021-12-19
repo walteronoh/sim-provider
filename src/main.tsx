@@ -1,17 +1,18 @@
 import * as fs from "fs";
 
+const path = __dirname;
 export interface ProviderOutput {
     name: string;
     regex: string;
 }
 
 const getProviderName = (phonenumber: string): ProviderOutput => {
-    const countries = fs.readdirSync("countries/");
+    const countries = fs.readdirSync(`${path}/countries/`);
     let provider;
     countries.forEach((country) => {
-        const file = fs.readdirSync(`countries/${country}/`);
+        const file = fs.readdirSync(`${path}/countries/${country}/`);
         if (file.length > 0) {
-            const content = fs.readFileSync(`countries/${country}/${file}`, "utf8");
+            const content = fs.readFileSync(`${path}/countries/${country}/${file}`, "utf8");
             try {
                 const obj = JSON.parse(content);
                 obj.simProviders
@@ -26,11 +27,11 @@ const getProviderName = (phonenumber: string): ProviderOutput => {
 };
 
 const getCountryProviderData = (country: string) => {
-    const countries = fs.readdirSync("countries/");
+    const countries = fs.readdirSync(`${path}/countries/`);
     let providerData;
     countries.filter((countryName) => countryName == country).map((ctry) => {
-        const file = fs.readdirSync(`countries/${ctry}/`);
-        const content = fs.readFileSync(`countries/${ctry}/${file}`, "utf8");
+        const file = fs.readdirSync(`${path}/countries/${ctry}/`);
+        const content = fs.readFileSync(`${path}/countries/${ctry}/${file}`, "utf8");
         try {
             const obj = JSON.parse(content);
             providerData = obj.simProviders;
@@ -42,11 +43,11 @@ const getCountryProviderData = (country: string) => {
 };
 
 const validateCountryProvider = (country: string, phonenumber: string): boolean => {
-    const countries = fs.readdirSync("countries/");
+    const countries = fs.readdirSync(`${path}/countries/`);
     let isValidated;
     countries.filter((countryName) => countryName == country).map((ctry) => {
-        const file = fs.readdirSync(`countries/${ctry}/`);
-        const content = fs.readFileSync(`countries/${ctry}/${file}`, "utf8");
+        const file = fs.readdirSync(`${path}/countries/${ctry}/`);
+        const content = fs.readFileSync(`${path}/countries/${ctry}/${file}`, "utf8");
         try {
             const obj = JSON.parse(content);
             isValidated = new RegExp(obj.simRegex).test(phonenumber) ? true : false
@@ -56,6 +57,5 @@ const validateCountryProvider = (country: string, phonenumber: string): boolean 
     })
     return isValidated;
 };
-
 
 export { getProviderName, getCountryProviderData, validateCountryProvider };
