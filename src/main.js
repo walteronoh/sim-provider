@@ -1,60 +1,57 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.validateCountryProvider = exports.getCountryProviderData = exports.getProviderName = void 0;
-var fs = require("fs");
-var path = __dirname;
-var getProviderName = function (phonenumber) {
-    var countries = fs.readdirSync("".concat(path, "/countries/"));
-    var provider;
-    countries.forEach(function (country) {
-        var file = fs.readdirSync("".concat(path, "/countries/").concat(country, "/"));
+const fs = require("fs");
+
+const path = __dirname;
+
+const getProviderName = (phonenumber) => {
+    const countries = fs.readdirSync(`${path}/countries/`);
+    let provider;
+    countries.forEach((country) => {
+        const file = fs.readdirSync(`${path}/countries/${country}/`);
         if (file.length > 0) {
-            var content = fs.readFileSync("".concat(path, "/countries/").concat(country, "/").concat(file), "utf8");
+            const content = fs.readFileSync(`${path}/countries/${country}/${file}`, "utf8");
             try {
-                var obj = JSON.parse(content);
+                const obj = JSON.parse(content);
                 obj.simProviders
-                    .filter(function (provider) { return new RegExp(provider.regex).test(phonenumber); })
-                    .map(function (value) { return provider = value; });
-            }
-            catch (error) {
+                    .filter((provider) => new RegExp(provider.regex).test(phonenumber))
+                    .map((value) => provider = value);
+            } catch (error) {
                 throw error;
             }
         }
     });
     return provider;
 };
-exports.getProviderName = getProviderName;
-var getCountryProviderData = function (country) {
-    var countries = fs.readdirSync("".concat(path, "/countries/"));
-    var providerData;
-    countries.filter(function (countryName) { return countryName == country; }).map(function (ctry) {
-        var file = fs.readdirSync("".concat(path, "/countries/").concat(ctry, "/"));
-        var content = fs.readFileSync("".concat(path, "/countries/").concat(ctry, "/").concat(file), "utf8");
+
+const getCountryProviderData = (country) => {
+    const countries = fs.readdirSync(`${path}/countries/`);
+    let providerData;
+    countries.filter((countryName) => countryName == country).map((ctry) => {
+        const file = fs.readdirSync(`${path}/countries/${ctry}/`);
+        const content = fs.readFileSync(`${path}/countries/${ctry}/${file}`, "utf8");
         try {
-            var obj = JSON.parse(content);
+            const obj = JSON.parse(content);
             providerData = obj.simProviders;
-        }
-        catch (error) {
+        } catch (error) {
             throw error;
         }
-    });
+    })
     return providerData;
 };
-exports.getCountryProviderData = getCountryProviderData;
-var validateCountryProvider = function (country, phonenumber) {
-    var countries = fs.readdirSync("".concat(path, "/countries/"));
-    var isValidated;
-    countries.filter(function (countryName) { return countryName == country; }).map(function (ctry) {
-        var file = fs.readdirSync("".concat(path, "/countries/").concat(ctry, "/"));
-        var content = fs.readFileSync("".concat(path, "/countries/").concat(ctry, "/").concat(file), "utf8");
+
+const validateCountryProvider = (country, phonenumber) => {
+    const countries = fs.readdirSync(`${path}/countries/`);
+    let isValidated;
+    countries.filter((countryName) => countryName == country).map((ctry) => {
+        const file = fs.readdirSync(`${path}/countries/${ctry}/`);
+        const content = fs.readFileSync(`${path}/countries/${ctry}/${file}`, "utf8");
         try {
-            var obj = JSON.parse(content);
-            isValidated = new RegExp(obj.simRegex).test(phonenumber) ? true : false;
-        }
-        catch (error) {
+            const obj = JSON.parse(content);
+            isValidated = new RegExp(obj.simRegex).test(phonenumber) ? true : false
+        } catch (error) {
             throw error;
         }
-    });
+    })
     return isValidated;
 };
-exports.validateCountryProvider = validateCountryProvider;
+
+module.exports = { getProviderName, getCountryProviderData, validateCountryProvider };
