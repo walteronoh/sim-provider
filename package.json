@@ -1,5 +1,5 @@
 {
-    "name": "simprovider",
+    "name": "sim-provider",
     "version": "1.0.0",
     "description": "A package used to show simcard providers.",
     "main": "src/main.js",
