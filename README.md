@@ -1,15 +1,51 @@
-# sim-provider
+<!-- ![Logo](assets/logo.png?raw=true "Logo") -->
+<div align="center"><img src="assets/logo.png" alt="Logo" width="200"/></div>
+<h1 align="center">Sim Provider</h1>
 A package used to show simcard providers
-## Development
-###  1. git clone https://github.com/walteronoh/sim-provider.git
-###  2. cd sim-provider
-###  3. Install dependencies:
-   npm install or  yarn install
-###  4. Start development:
-   npm start or  yarn start
-    
-#### @voola! the instance is up@
 
-## Using as a dependency
-  npm i sim-provider or  yarn add sim-provider
+## Usage
+
+with `npm`:
+
+```bash
+npm install sim-provider
+```
+
+with `yarn`:
+
+```bash
+yarn add sim-provider
+```
+## Development
+### Would you like to contibute?
+clone repo:
+
+```bash
+git clone https://github.com/walteronoh/sim-provider.git
+```
+change directory to project root:
+```bash
+cd sim-provider
+```
+Install app dependencies:
+
+1. with `npm`:
+
+   ```bash
+   npm install
+   ```
+
+   ```bash
+   npm start
+   ```
+
+2. with `yarn`:
+
+   ```bash
+   yarn
+   ```
+
+   ```bash
+   yarn start
+   ```
   
