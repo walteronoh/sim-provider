@@ -10,6 +10,12 @@ Supported countries
 
 ## Usage
 
+with `cdn`:
+
+```bash
+<script src="https://cdn.jsdelivr.net/npm/sim-provider/dist/bundle.min.js"></script>
+```
+
 with `npm`:
 
 ```bash
