@@ -1,3 +1,5 @@
+'use strict';
+
 const countries = require("../dist/countries.bundle.json");
 
 const getProviderName = (phonenumber) => {

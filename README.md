@@ -1,7 +1,12 @@
 <!-- ![Logo](assets/logo.png?raw=true "Logo") -->
-<div align="center"><img src="assets/logo.png" alt="Logo" width="200"/></div>
+<div align="center"><img src="dist/assets/logo.png" alt="Logo" width="200"/></div>
 <h1 align="center">Sim Provider</h1>
 A package used to show simcard providers
+
+```
+Supported countries 
+🇰🇪
+```
 
 ## Usage
 
