@@ -28,7 +28,22 @@ with `yarn`:
 yarn add sim-provider
 ```
 
-## Methods
+Import the packages
+using `require`:
+
+```bash
+// Using require
+const { getProviderName, getCountryProviderData, validateCountrySimProvider, validateSimProvider } = require('sim-provider');
+```
+
+using `import (ES6 module syntax)`:
+
+```bash
+// Using import (ES6 module syntax)
+import { getProviderName, getCountryProviderData, validateCountrySimProvider, validateSimProvider } from 'sim-provider';
+```
+
+## Available Methods
 
 1. `getProviderName(phoneNumber)` -> This method takes a phone number as input and returns the name of the SIM card provider associated with that phone number.
    ```bash

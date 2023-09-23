@@ -9,7 +9,7 @@
         "build": "node bundle.js && rollup -c"
     },
     "keywords": [
-        "simcard"
+        "simcard", "SIM details", "SIM validation", "SIM information", "phone"
     ],
     "author": "walterkiprono81@gmail.com",
     "license": "MIT",
