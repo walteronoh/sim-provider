@@ -4,12 +4,16 @@
     "description": "A package used to show simcard providers.",
     "main": "dist/bundle.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "start": "node bundle.js && nodemon ./src/main.js",
         "build": "node bundle.js && rollup -c"
     },
     "keywords": [
-        "simcard", "SIM details", "SIM validation", "SIM information", "phone"
+        "simcard",
+        "SIM details",
+        "SIM validation",
+        "SIM information",
+        "phone"
     ],
     "author": "walterkiprono81@gmail.com",
     "license": "MIT",
@@ -20,8 +24,10 @@
         "eslint": "^8.4.1",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^4.0.0",
+        "jest": "^29.7.0",
         "nodemon": "^2.0.15",
         "prettier": "^2.5.1",
+        "regex-parser": "^2.2.11",
         "rollup": "^3.29.2"
     },
     "repository": {
