@@ -1,0 +1,30 @@
+{
+    "country": "tanzania",
+    "simProviders": [
+        {
+            "name": "Vodacom",
+            "regex": "^(\\+255|0)[7]\\d{7}$"
+        },
+        {
+            "name": "Airtel",
+            "regex": "^(\\+255|0)[6]\\d{7}$"
+        },
+        {
+            "name": "Tigo",
+            "regex": "^(\\+255|0)(78)\\d{6}$"
+        },
+        {
+            "name": "Halotel",
+            "regex": "^(\\+255|0)(62)\\d{7}$"
+        },
+        {
+            "name": "Zantel Zanzibar",
+            "regex": "^(\\+255|0)(75)\\d{6}$"
+        },
+        {
+            "name": "TTCL",
+            "regex": "^(\\+255|0)(2)\\d{7}$"
+        }
+    ],
+    "simRegex": "^(\\+255|0)(([762]|62)\\d{7}|(78|75)\\d{6})$"
+}

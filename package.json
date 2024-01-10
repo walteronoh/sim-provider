@@ -1,6 +1,6 @@
 {
     "name": "sim-provider",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A package used to show simcard providers.",
     "main": "dist/bundle.js",
     "scripts": {
