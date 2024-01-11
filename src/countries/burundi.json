@@ -1,0 +1,34 @@
+{
+    "country": "ethiopia",
+    "simProviders": [
+        {
+            "name": "Lumitel",
+            "regex": "^(\\+257|0)[7]\\d{7}$"
+        },
+        {
+            "name": "Econet Leo",
+            "regex": "^(\\+257|0)[6]\\d{7}$"
+        },
+        {
+            "name": "Onatel",
+            "regex": "^(\\+257|0)[2]\\d{7}$"
+        },
+        {
+            "name": "Smart Mobile",
+            "regex": "^(\\+257|0)[5]\\d{7}$"
+        },
+        {
+            "name": "Lacell SU",
+            "regex": "^(\\+257|0)[4]\\d{7}$"
+        },
+        {
+            "name": "Halotel Burundi",
+            "regex": "^(\\+257|0)[8]\\d{7}$"
+        },
+        {
+            "name": "Intercel",
+            "regex": "^(\\+257|0)[3]\\d{7}$"
+        }
+    ],
+    "simRegex": "^(\\+257|0)[762548]\\d{7}$"
+}
