@@ -1,0 +1,30 @@
+{
+    "country": "ethiopia",
+    "simProviders": [
+        {
+            "name": "Ethio Telecom",
+            "regex": "^(\\+251|0)[9]\\d{8}$"
+        },
+        {
+            "name": "Safaricom",
+            "regex": "^(\\+251|0)(11)\\d{7}$"
+        },
+        {
+            "name": "Tele Birr",
+            "regex": "^(\\+251|0)[8]\\d{8}$"
+        },
+        {
+            "name": "Airtel",
+            "regex": "^(\\+251|0)(91)\\d{7}$"
+        },
+        {
+            "name": "Ezana Telecom",
+            "regex": "^(\\+251|0)(93)\\d{7}$"
+        },
+        {
+            "name": "Sheba Mobile",
+            "regex": "^(\\+251|0)(97)\\d{7}$"
+        }
+    ],
+    "simRegex": "^(\\+251|0)([98]\\d{8}|(11|91|93|97)\\d{7})$"
+}
