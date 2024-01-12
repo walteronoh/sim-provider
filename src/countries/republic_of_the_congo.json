@@ -1,0 +1,22 @@
+{
+    "country": "republic of the congo",
+    "simProviders": [
+        {
+            "name": "MTN",
+            "regex": "^(\\+242|0)(06)\\d{7}$"
+        },
+        {
+            "name": "Airtel",
+            "regex": "^(\\+242|0)(05)\\d{7}$"
+        },
+        {
+            "name": "Azur",
+            "regex": "^(\\+242|0)(02|055)\\d{7}$"
+        },
+        {
+            "name": "Warid",
+            "regex": "^(\\+242|0)(01)\\d{7}$"
+        }
+    ],
+    "simRegex": "^(\\+242|0)(06|05|02|055|01)\\d{7}$"
+}
