@@ -1,0 +1,26 @@
+{
+    "country": "democratic republic of the congo",
+    "simProviders": [
+        {
+            "name": "Vodacom",
+            "regex": "^(\\+243|0)(81|82)\\d{7}$"
+        },
+        {
+            "name": "Airtel",
+            "regex": "^(\\+243|0)(89|99)\\d{7}$"
+        },
+        {
+            "name": "Orange",
+            "regex": "^(\\+243|0)(85|88)\\d{7}$"
+        },
+        {
+            "name": "Africell",
+            "regex": "^(\\+243|0)(84|94)\\d{7}$"
+        },
+        {
+            "name": "Tigo",
+            "regex": "^(\\+243|0)(80)\\d{7}$"
+        }
+    ],
+    "simRegex": "^(\\+243|0)(81|82|89|99|85|88|84|94|80)\\d{7}$"
+}
