@@ -1,0 +1,30 @@
+{
+    "country": "rwanda",
+    "simProviders": [
+        {
+            "name": "MTN",
+            "regex": "^(\\+250|0)(78)\\d{7}$"
+        },
+        {
+            "name": "Airtel",
+            "regex": "^(\\+250|0)(73)\\d{7}$"
+        },
+        {
+            "name": "Tigo",
+            "regex": "^(\\+250|0)(72)\\d{7}$"
+        },
+        {
+            "name": "Vodafone",
+            "regex": "^(\\+250|0)(75)\\d{7}$"
+        },
+        {
+            "name": "Umoja Mobile",
+            "regex": "^(\\+250|0)[4]\\d{7}$"
+        },
+        {
+            "name": "Olleh Rwanda Networks",
+            "regex": "^(\\+250|0)(79)\\d{7}$"
+        }
+    ],
+    "simRegex": "^(\\+250|0)(78|73|72|75|79|4)\\d{7}$"
+}

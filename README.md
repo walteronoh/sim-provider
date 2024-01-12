@@ -5,7 +5,7 @@ A package used to show simcard providers
 
 ```
 Supported countries 
-🇰🇪 🇺🇬 🇹🇿 🇪🇹 🇸🇴 🇧🇮
+🇰🇪 🇺🇬 🇹🇿 🇪🇹 🇸🇴 🇧🇮 🇷🇼
 ```
 
 ## Usage
